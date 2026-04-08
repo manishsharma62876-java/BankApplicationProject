@@ -18,5 +18,14 @@ public interface BankAccountService {
 	
 	//delete Account
 	public void  deleteAccount(Long id);
+	
+	//deposit money
+	BankAccount deposit(Long id, double amount);
 
+	//withdraw money
+	BankAccount withdraw(Long id,double amount);
+	
+	//transfer money
+	public void transfermoney(String fromAccountNumber , String toAccountNumber , double amount);
+	
 }
