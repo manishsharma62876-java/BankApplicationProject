@@ -26,10 +26,10 @@ public class BankAccount {
 	private Long id;
 
 	@Column(name = "account_number", unique = true, nullable = false)
-	private String account_number;
+	private String accountNumber;
 
 	@Column(name = "account_holder_name", nullable = false)
-	private String account_holder_name;
+	private String accountHolderName;
 
 	@Column(name = "email")
 	private String email;
@@ -46,6 +46,7 @@ public class BankAccount {
 	@Column(name = "update_at")
 	private LocalDate updateAt;
 
+	
 	@PrePersist
 	private void onCreate() {
 		this.createdAt = LocalDate.now();

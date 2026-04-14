@@ -52,15 +52,16 @@ public class BankAccountController {
 	@PostMapping("/{id}/withdraw")
 	public BankAccount withdraw(@PathVariable Long id, @RequestParam double amount) {
 		return service.withdraw(id, amount);
-	}
-
+	}	
 	
 	@PostMapping("/transfer")
-	public ResponseEntity<String> transfermoney(@RequestParam String fromAccountNumber,
-			@RequestParam String toAccountNumber, @RequestParam double amount) {
-		service.transfermoney(fromAccountNumber, toAccountNumber, amount);
-
-		return ResponseEntity.ok("Money transfered successfully......!");
-
+	public String transferMoney(@RequestParam String fromAccount,
+			@RequestParam String toAccount
+			,@RequestParam double amount) {
+		
+	     service.transfermoney(fromAccount, toAccount, amount);
+	     return "Transfer money successfull";
 	}
-}
+	}
+
+

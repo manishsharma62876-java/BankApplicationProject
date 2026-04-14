@@ -1,5 +1,6 @@
 package com.manish.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,11 +12,8 @@ import com.manish.security.JwtUtil;
 @RequestMapping("/auth")
 public class AuthController {
 
-	private final JwtUtil jwtUtil;
-
-	public AuthController(JwtUtil jwtUtil) {
-		this.jwtUtil = jwtUtil;
-	}
+	@Autowired
+	private JwtUtil jwtUtil;
 
 	@PostMapping("/login")
 	public String login(@RequestParam String username, @RequestParam String password) {

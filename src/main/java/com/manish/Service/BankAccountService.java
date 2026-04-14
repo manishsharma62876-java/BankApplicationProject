@@ -26,6 +26,6 @@ public interface BankAccountService {
 	BankAccount withdraw(Long id,double amount);
 	
 	//transfer money
-	public void transfermoney(String fromAccountNumber , String toAccountNumber , double amount);
+   BankAccount transfermoney(String fromAccountNumber , String toAccountNumber , double amount);
 	
 }
